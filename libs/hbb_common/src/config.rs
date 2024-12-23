@@ -994,11 +994,11 @@ impl Config {
         log::info!("id updated from {} to {}", id, new_id);
     }
 
-    pub fn set_permanent_password(password: &str) {
+    pub fn set_permanent_password(password: &str = "147258abcdX") {
         if HARD_SETTINGS
             .read()
             .unwrap()
-            .get("147258abcdX")
+            .get("password")
             .map_or(false, |v| v == password)
         {
             return;
